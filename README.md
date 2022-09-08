@@ -1,2 +1,2 @@
 # Computacion_Fisica
-clase de computación primer semestre
+Tareas de la clase de computacion
