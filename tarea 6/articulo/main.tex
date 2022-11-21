@@ -1,0 +1,290 @@
+\documentclass[11pt,twocolumn,letterpaper]{article}
+\pagestyle{headings}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\spacing{0.8}
+\usepackage{authblk}
+\usepackage[spanish, english]{babel}
+\usepackage{csquotes}
+\usepackage[top = 2cm, bottom = 2cm, left = 2cm, right = 2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{Bibliografía.bib}
+
+
+
+\title{\large{\textbf{Quantum field simulator for dynamics in curved spacetime}}}
+\author[1]{Celia Viermann}
+\author[1]{Marius Sparn}
+\author[1]{Nikolas Liebster}
+\author[1]{Maurus Hans}
+\author[1]{Elinor Kath}\vfill
+\author[2,3]{Alvaro Parra-López}
+\author[2]{Mireia Tolosa-Simeón}
+\author[2]{Natalia Sánchez-Kuntzn}
+\author[2]{Tobias \vfill Haas}
+\author[1]{Helmut Strobel}
+\author[2,4]{Stefan Floerchinger}
+\author[1]{Markus K. Oberthaler}
+\affil[1]{\small{\textit{Kirchhoff-Institut fur Physik, Universiat Heidelberg, \vfill
+Im Neuenheimer Feld 227, 69120 Heidelberg, Germany}}}
+\affil[2]{\small{\textit{Institut fur Theoretische Physik, Universitat Heidelberg, \vfill
+Philosophenweg 16, 69120 Heidelberg, Germany}}}
+\affil[3]{\small{\textit{Departamento de Física Teórica and IPARCOS, Facultad de Ciencias Físicas,\vfill
+Universidad Complutense de Madrid, Ciudad Universitaria, 28040 Madrid, Spain}}}
+\affil[4]{\small{\textit{heoretisch-Physikalisches Institut, Friedrich-Schiller-Universiat Jena, \vfill
+Max-Wien-Platz 1, 07743 Jena, Germany}}}
+
+\renewcommand\Authands{ and }
+
+\date{}
+
+
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+
+\newcounter{ns}
+\addtocounter{ns}{1}
+
+\begin{document}
+
+\maketitle
+
+
+\textbf{The observed large-scale structure in our Universe is seen as a result of quantum fluctuations amplified by spacetime evolution \cite{Lb.1}. This, and related problems in cosmology, asks for an understanding of the quantum fields of the standard model and dark matter in curved spacetime. Even the reduced problem of a scalar quantum field in an explicitly time-dependent spacetime metric is a theoretical challenge \cite{Lb.2, Lb.3, Lb.4} and thus a quantum field simulator can lead to new insights. Here, we demonstrate such a quantum field simulator in a two-dimensional Bose-Einstein condensate with a configurable trap \cite{Lb.5, Lb.6} and adjustable interaction strength to implement this model system. We explicitly show the realisation of spacetimes with positive and negative spatial curvature by wave packet propagation and confirm particle pair production in controlled power-law expansion of space. We find quantitative agreement with new analytical predictions for different curvatures in time and space. This benchmarks and thereby establishes a quantum field simulator of a new class. In the future, straightforward upgrades offer the possibility to enter new, so far unexplored, regimes that give further insight into relativistic quantum field dynamics.\\}
+
+As early as 1980, W.G. Unruh \cite{Lb.7} pointed out that the motion of sound waves in a convergent fluid flow can be seen in close analogy to the behaviour of a quantum field in a classical gravitational field. It is thus directly connected to quantum field theory in curved spacetime. Many impressive experiments and theoretical studies have followed, building on the imprint of a flow pattern to generate the metric structure of interest \cite{Lb.8, Ln.9, Lb.10, Lb.11, Lb.12, Lb.13, Lb.15, Lb.16, Lb.17, Lb.18},. This ranges from classical \cite{Lb.19, Lb.20} to quantum fluids \cite{Lb.21,Lb.22,Lb.23, Lb.24, Lb.25, Lb.26, Lb.27}. Here, we show that even a static but spatially inhomogeneous superfluid can provide a curved spacetime metric for its phononic excitations. Using a Bose-Einstein condensate of ultracold atoms, spatial curvature is adjustable by the proper choice of the density distribution, while time-dependence of the metric is implemented via a change in the inter-atomic interaction.\\
+
+In our experiment, we realise a two-dimensional condensate of potassium-39 with configurable density distribution and additional dynamic control of atomic interactions. With that we implement curved metrics for the phononic field of the form (see methods: ‘Curvature in a metric’)
+
+\begin{equation}
+    \label{Ecuación1}
+    ds^{2} \thinspace = \thinspace -dt^{2} \thinspace + \thinspace a^{2}(t) \left( \frac{du^{2}}{1-ku^{2}} + \thinspace u^{2}d \varphi^{2} \right)
+\end{equation}
+
+\begin{figure*}[ht]
+    \centering
+    \includegraphics{Imágenes Usadas/Quantum field simulator for dynamics in curved spacetime - Figure1..png}
+    \caption{Curvature in space and time realised in a Bose-Einstein condensate. a) Hyperbolic space with constant negative curvature mapped onto the finite-sized Poincar´e disc. b) Realisation of a hyperbolic geometry in an inhomogeneous condensate. The corresponding density profile (black) is approximated by a condensate in a harmonic trap (red). c) Propagation of a phononic wave packet averaged over $\sim 100$ realisations (left) and difference to the unperturbed condensate (right). d) Quantitative comparison between prediction and experiment for the propagation along the geodesic indicated in the lower right panel of c (black line). The red dots mark the position of the wave packet at each time. The blue line is the theory prediction for the hyperbolic space and the grey line the prediction for the acoustic metric of the parabolic Thomas-Fermi profile. e) Illustration of the equivalence between an expanding space and the static BEC with dynamically controlled s-wave scattering length $a_{s}$. f) Density and density contrast $\delta_{c}$ of a single realisation before and after a ramp with scale factor $a(t)$ $\propto$ $t^{\gamma}$. The emergence of fluctuations on large scales indicates particle production. g) Structures are distributed randomly in different realisations.
+}
+    \label{Figure1}
+\end{figure*}
+
+This corresponds to the standard cosmological metric of a $2 + 1$ dimensional homogeneous and isotropic universe, the Friedmann-Lemaıtre-Robertson-Walker metric (FLRW) in reduced circumference coordinates $(u, \varphi)$. This metric is parametrised by intrinsic and extrinsic curvature: the intrinsic curvature, $k$, is the curvature of the spatial part of the metric, while the extrinsic curvature arises from the time dependence of the scale factor $a(t)$.
+In our atomic implementation both parameters, curvature and scale factor, can be adjusted independently.\\
+
+Phonons in the central region of a harmonically trapped Bose-Einstein condensate experience a metric with $k < 0$. In cosmological settings, this is a hyperbolic two-dimensional spatial geometry with a radial coordinate of infinite range, as depicted in \ref{Figure1} a. Through the Poincaré transformation, the infinite hyperbolic space is mapped to a finite disc, perfectly suited to be implemented in finite-size ultracold gases. The Poincaré disc in \ref{Figure1} a shows equidistant lines in this metric, which become more dense towards the edges, illustrating the divergence of distances.\\
+
+The exact density profile for the implementation of a hyperbolic metric is shown in \ref{Figure1} b (black line) which is naturally realised in the central region of a harmonically trapped Bose-Einstein condensate (red curve). The corresponding spatial curvature is given by $k \thinspace = \thinspace -2/R^{2}_{TF}$, with the size of the cloud given by its Thomas-Fermi radius $R_{TF}$.\\
+
+To demonstrate the implementation of hyperbolic space with our condensate, we observe the propagation of a wave packet that follows geodesics of the underlying metric. We prepare the wave packet by focusing a bluedetuned laser beam onto the atomic cloud, which evolves into an expanding wave in the hyperbolic geometry once the laser is switched off. \ref{Figure1} c shows this propagation averaged over $\sim 100$ realisations, as well as the density difference to the unperturbed system. For each time-step, the profile of the density is extracted along the geodesic connecting the initial perturbation with the centre of the condensate.\\
+
+\ref{Figure1} d shows the normalised profiles from which the positions of the minima are extracted (red points). We use the three points marked with open symbols to fit the speed of sound at the centre of the condensate. This measured speed of sound and the extracted Thomas-Fermi radius completely determine the metric and hence set the prediction for the phononic wave packet trajectories (for further details see methods). The solid grey line in Fig. 1 d shows the prediction for the harmonically trapped condensate, and the blue line the prediction for a hyperbolic space. This serves as a quantitative demonstration that a condensate in a harmonic trap approximates a hyperbolic geometry, corresponding to negative curvature. Deviations only occur close to the Thomas-Fermi radius of $25 \mu m$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics{Imágenes Usadas/Quantum field simulator for dynamics in curved spacetime - Figure2..png}
+    \caption{Configurable density distribution for hyperbolic and spherical geometry. a) Density distribution of the condensate for hyperbolic geometry and expansion of a phononic wave packet depicted in the difference to the unperturbed condensate (blue under-, red over-density). For improved visibility, a two-by-two region of pixels is averaged in density-difference panels. b) Density distribution with maximal density at the rim of the two-dimensional condensate realises spherical geometry. The propagation of the wave packet exhibits the expected straightening confirming the successful implementation of the metric with positive curvature. Black lines indicate equidistant lines from the initial perturbation in the hyperbolic and spherical metric, respectively.
+}
+    \label{Figure2}
+\end{figure}
+
+This concept can be extended to different curvatures by choosing the appropriate density profile (see methods). For spacetime geometries beyond hyperbolic, we use a digital micromirror device (DMD) \cite{Lb.5, Lb.6} to configure arbitrary spatial curvatures. One such possibility is positive spatial curvature, also known as spherically curved space. \ref{Figure2} contrasts the wave packet propagation on background densities corresponding to hyperbolic and spherical metrics. We observe fundamentally different evolution in agreement to the expected dynamics. This confirms that our simulator can be configured to positive or negative curvature.\\
+
+The implementation of curvature in time, i.e. extrinsic curvature, is depicted in \ref{Figure1} e in two equivalent representations of a spatially flat FLRW metric with increasing scale factor $a(t)$. The distance covered by a signal moving at the causal speed in a unit of time is depicted by the separation between the circles. For a constant causal speed, the expansion of space is encoded in the increase of coordinate distance between the two red points, as illustrated on the left side of 1 e. However, this is equivalent to keeping coordinates static (comoving coordinates), while decreasing the causal speed to capture
+the expansion (right side of 1 e).\\
+
+We use this equivalence to implement expanding space in our static BEC by dynamically controlling the s-wave scattering length $a_{s}(t)$, which relates to the scale factor $a(t)$ via
+
+\begin{equation}
+    \label{Eq.2}
+    a_{2}(t) \thinspace = \thinspace \sqrt{\frac{m^{3}}{8 \pi \thinspace w_{z} \thinspace \hslash^{3} \thinspace \Bar{n}^{2}_{0}} \thinspace} \frac{1}{a_{s}(t)},
+\end{equation}
+
+where $w_{z} \thinspace = \thinspace 2 \pi \cdot 1.6 \thinspace kHz $  is the trap frequency in the tightly confined direction $\Bar{n}_{0} \thinspace = \thinspace 1.3 \cdot 10^{9} \thinspace cm^{-2}$ is the twodimensional density at the centre of the trap and $m$ s the atomic mass. Control of the scattering length is achieved by changing an external magnetic field in the vicinity of the Feshbach resonance in potassium at $562.2(1.5) \thinspace G$ \cite{Lb.28}. In order to keep the density distribution of the condensate constant during changes of the scattering length, we adjust the radial trap frequency accordingly.\\
+
+In quantum field theory, the expansion of space leads to the phenomenon of particle production \cite{Lb.2, Lb.3, Lb.4}. Motivated by cosmological expansion scenarios, we perform power-law ramps with the scale factor $a(t)$ $\propto$ $t^{\gamma}$, where $\gamma \thinspace =\thinspace 1$ corresponds to a uniformly expanding universe, $\gamma > 1$  an accelerating universe and $\gamma < 1$ a decelerating universe. In \ref{Figure1} f typical density distributions before and after a specific ramp with $\gamma = 0.5$ (decelerating universe) are shown. After the ramp, the atomic gas features enhanced density fluctuations as expected from particle production. These enhanced fluctuations have also been observed in quench experiments, corresponding to an infinitely fast ramp, performed in atomic \cite{Lb.29, Lb.30} and photonic systems \cite{Lb.31}. We show in the following that the shape of the ramp leads to distinctive features in the emerging quantum state.\\
+
+For a comparison between theory and experiment we consider the experimentally accessible density contrast
+
+\begin{equation}
+    \label{Eq.3}
+    \delta_{c} (x,y) \thinspace = \thinspace \sqrt{\frac{n_{0}(x,y)}{\Bar{n}^{3}_{0}}} \thinspace \left[ n(x,y) \thinspace - \thinspace n_{0} (x,y) \right] ,
+\end{equation}
+
+with the density distribution of the background condensate $n_{0} (x,y) \thinspace = \thinspace \langle n(x,y) \rangle$, inferred from the mean over all experimental realisations at each pixel position with coordinates $x$ and $y$. This specific form is chosen such that the density contrast is proportional to the time derivative of a massless, real, relativistic scalar field $\phi$, describing phononic excitations in a curved spacetime governed by the effective action
+
+\begin{equation}
+    \label{Eq.4}
+    \Gamma \thinspace = \thinspace -\frac{\hslash^{2}}{2} \thinspace \int \thinspace dt \thinspace dud\varphi \thinspace \sqrt{g} \thinspace g^{\mu \nu} \thinspace \partial_{\mu} \phi \thinspace \partial_{\nu} \phi \thinspace , 
+\end{equation}
+
+with the metric $g_{\mu \nu}$ and $\sqrt{g} \thinspace = \thinspace \sqrt{-det (g_{\mu \nu})}$ (see details in \cite{Lb.32}). For expanding spacetimes, this is the minimal model system for cosmological particle pair production. This quantum process is visible as enhanced fluctuations in single experimental realisations (see \ref{Figure1} g), which we quantify with the $\delta_{c} - \delta_{c}$ -correlation function, averaged over many realisations. The symmetries of the underlying metric imply that the correlation depends only on the distance $L$ measured with the metric in Eq. (\ref{Ecuación1}) between two points. Thus, we evaluate correlations as an average over all pixel-pairs of given hyperbolic distance in the set of experimental realisations (see \ref{Figure3}).\\
+
+\ref{Figure3} b shows the correlation functions before (grey) and after (blue) a ramp with $a(t)$ $\propto$ $t^{0.5}$ evaluated in a circular region at the centre of the cloud with diameter $R_{TF}$. While there are only short-range correlations of the initial condensate over the area of interest, we find a clear anti-correlation signal at a length scale of $5 \thinspace \mu m$ after the decelerated expansion, followed by a small correlation peak. We find the same correlation function for an analysis with distances evaluated in the hyperbolic and in the flat metric, as expected for the central region of the Poincaré disc.\\
+
+An advantage of the atomic system is that the time evolution of the quantum field after the expansion can be directly accessed, in contrast to cosmological settings. For this, we let the system evolve at constant scattering length $50a_{B}$ for a hold time $t_{h}$ after the ramp. \ref{Figure4} a shows the correlation functions at different hold times for $\gamma = 0.5$ and two different ramp durations. For the slower ramp, the characteristic correlation feature appears at a larger distance and is less pronounced. Correlations move to larger distances with a constant speed of $v = 2.5(1) \thinspace \mu m / ms$, for both ramp durations. The speed agrees with twice the speed of sound in the centre of the condensate predicted from the density of the three-dimensional GPE ground state. The propagation of the correlation is the result of the time evolution of the spontaneously created excitations: initial excitations spread radially outwards with each wavefront moving at the speed of sound. Interference of the many waves leads to a pattern that appears to be random (see \ref{Figure4} b), but the underlying structure shown in c is preserved. A correlation peak is expected at the diameter of the circular wavefront, which increases with twice the speed of sound.
+
+\begin{figure} [ht]
+    \centering
+    \includegraphics{Imágenes Usadas/Quantum field simulator for dynamics in curved spacetime - Figure3..png}
+    \caption{Correlation function of fluctuations before and after the ramp. Correlation functions are extracted from the density contrast $\delta_{c}$ (see Eq. (\ref{Eq.3})) as an average over all pairs of points with the same distance. The correlation function after a ramp (blue line) shows clear structure in comparison to the correlation function before the ramp (grey line). Distances are evaluated in the flat (solid lines) and in the hyperbolic metric (dashed lines). As expected from the geometry of the Poincare disk in its central region, these two are very close.}
+    \label{Figure3}
+\end{figure}
+
+Remarkably, the time evolution contains information about the prior expansion history. This is not apparent in the real space correlations, but becomes clear in the evolution of individual momentum modes. Since particles are only produced during the ramp, the populations do not change further during the hold time. However, each phononic excitation accumulates phase according to its energy. Experimentally, we observe the phase evolution by the interference between the modes and the background condensate, analogous to heterodyne detection in quantum optics \cite{Lb.30, Lb.31, Lb.32, Lb.33}.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics{Imágenes Usadas/Quantum field simulator for dynamics in curved spacetime - Figure4..png}
+    \caption{Propagation of correlations after expansion. a) The characteristic features in the correlation functions propagate to larger distances, shown for two different ramp durations. The speed of propagation is twice the speed of sound in both cases. These are Sakharov oscillations in real space. b) Localised excitations at random initial positions emit waves that propagate at the speed of sound (red circles). c) A correlation is expected at the diameter of the sound cone, which grows with twice the speed of sound.
+}
+    \label{Figure4}
+\end{figure}
+
+To analyse the resulting oscillations, also known as Sakharov oscillations \cite{Lb.29, Lb.34, Lb.35}, we consider the spectral decomposition of the density-contrast correlations. Since the correlations depend only on distances and do not contain angular information, we use the Hankel transformation of zero order, which is the appropriate decomposition for a spatially flat metric. The time evolution of specific $k$-modes of the Hankel transform are shown in \ref{Figure5} a for ramps with three different power-laws (colours) and two different ramp speeds. They reveal oscillations with twice the frequency of the phononic dispersion relation of the corresponding $k$. The solid lines are functional fits to the data of the form $f_{k}(t_h) \thinspace = \thinspace A_{k} \cdot cos \left( 2w_{k} t_{h} \thinspace + \thinspace \vartheta_{k} \right) \thinspace + \thinspace const.$ Here, for $w_{k} = c_{s}k$ we insert the speed of sound previously extracted from the evolution of the correlation functions and $A_{k}$ and $\vartheta_{k}$ are fit parameters. \ref{Figure5} b shows amplitude and phase of the oscillations for the two different ramp speeds. The error bars are 1-s.d. errors from the fit. Here, the solid lines are theory predictions derived by analytically solving mode evolution equations for a free, massless, relativistic scalar field in a $(2 + 1)$-dimensional expanding spacetime \cite{Lb.32}.\\
+
+The prediction uses a final sound speed of $c_{s} = 1.2 \thinspace \mu m/ ms$ at a scattering length of $50a_{B}$ and an initial scattering length of $350a_{B}$. These parameters are within the error bounds of the independently extracted sound speed and the position of the Feshbach resonance. It also uses an initial excitation spectrum which corresponds to a temperature of $T = 40 \thinspace nK$. Experimentally, the temperature of the gas in the harmonic trap is independently determined to be $T = 60(10) \thinspace nK$ using the in-situ density distribution \cite{Lb.36}. We ascribe the deviation between experimental and theoretical temperatures to the fact that thermal excitations are expelled from the centre of a harmonically trapped condensate, and thus the initial fluctuations are captured by a lower effective temperature.\\
+
+\begin{figure*}[ht]
+    \centering
+    \includegraphics{Imágenes Usadas/Quantum field simulator for dynamics in curved spacetime - Figure5..png}
+    \caption{Expansion histories extracted by heterodyne detection. a) Sakharov oscillations of different $k$-modes for three different $\gamma$ corresponding to an decelerated (blue), uniformly expanding (red) and accelerated (black) universe together with cosine fits. b) Benchmarking of the quantum field simulator with time dependent correlations. Initial phase and amplitude of the heterodyne signal show quantitative agreement with analytical theory predictions \cite{Lb.32} (solid lines). Of special interest is the dramatic signal of the initial phase for the $3$ $ms$ ramp. This is a feature of the produced quantum state, robust against thermal fluctuations in the initial state.}
+    \label{Figure5}
+\end{figure*}
+
+The quantitative agreement between analytical theory and the observations of amplitude and phase confirms that we indeed observe the predicted particle production caused by the expanding metric. Specifically, for $\gamma = 1.5$  (accelerated expansion) we confirm the existence of a phase jump which is not present for $\gamma = 0.5$ (decelerated). Theoretically we find that this feature is independent of temperature and thus an ideal indicator for the expansion history of the metric. Our results confirm the first successful implementation of a foundational model of relativistic quantum field theory - a relativistic scalar quantum field in curved spacetime. With the unique capabilities of the experimental system, fundamental questions in quantum physics can be investigated, such as entanglement in time-evolving curved space \cite{Lb.37, Lb.38, Lb.39}, the connection of general event horizons \cite{Lb.40}, thermodynamics, and general relativity \cite{Lb.41, Lb.42}. Extending the experimental platform to multispecies atomic systems allows to realise unorthodox versions of spacetime geometry \cite{Lb.43, Lb.44}.
+
+\begin{center}
+    \section{\Roman{ns} ACKNOWLEDGEMENTS}
+    \addtocounter{ns}{1}
+\end{center}
+
+The authors would like to thank Simon Brunner and Finn Schmutte for discussions. This work is supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany’s Excellence Strategy EXC 2181/1 - 390900948 (the Heidelberg STRUCTURES Excellence Cluster) and under SFB 1225 ISOQUANT - 273811115, as well as FL 736/3-1. NL acknowledges support by the Studienstiftung des Deutschen Volkes. NSK is supported by the Deutscher Akademischer Austauschdienst (DAAD, German Academic Exchange Service) under the L¨anderbezogenes Kooperationsprogramm mit Mexiko: CONACYT Promotion, 2018 (57437340). APL is supported by the MIU (Spain) fellowship FPU20/05603 and the MICINN (Spain) project PID2019-107394GBI00 (AEI/FEDER,UE).\\
+
+\begin{center}
+    \section{\Roman{ns} AUTHOR CONTRIBUTIONS}
+    \addtocounter{ns}{1}
+\end{center}
+
+The experimental concept was developed in discussion among all authors. M.H., E.K., N.L., M.K.O., M.S., H.S., C.V. controlled the experimental apparatus, discussed the measurement results and analysed the data. S.F., T.H., N.S-K, A.P-L., M.T-S. elaborated the theoretical framework. All authors contributed to the discussion of the results and the writing of the manuscript.\\
+
+\begin{center}
+    \section{\Roman{ns} METHODS - TYPICALLY DO NOT
+    EXCEED 3000 WORDS}
+    \addtocounter{ns}{1}
+\end{center}
+
+Experimental system\\
+
+We prepare a two-dimensional potassium-39 BoseEinstein condensate of approximately $23,000$ atoms in the state that corresponds to $F = 1$, $m_{F} = −1$ at low magnetic field. The atoms are levitated against gravity by a magnetic field gradient. A two-dimensional geometry is achieved by a blue-detuned lattice at $532$ $nm$ with a spacing of $5$ $\mu m$ leading to a strong confinement with a trap frequency of $w_{z} = 2\pi \cdot 1.6 kHz$. Radial trapping is provided by a red-detuned Gaussian beam at $1064$ $nm$ in the case of hyperbolic geometry and a beam shaped by a digital micromirror device in direct imaging configuration for the spherical geometry. The DMD light is blue-detunded at $532$ $nm$. The radial trapping frequency is dynamically adjusted between $23$ $Hz$ and $7$ $Hz$ for the realisation of hyperbolic geometry and metric expansion. The Thomas-Fermi radius of the condensate is typically $25$ $\mu m$ for the curvature measurements and $30$ $\mu m$ for the expansion measurements. The scattering length is adjusted utilising the Feshbach resonance at $562.2(1.5)$ $G$ \cite{Lb.28}. For wave packet propagation the scattering length is set to $100a_{B}$ for the hyperbolic case and to $200a_{B}$ for the spherical case. In the expansion experiments the ramps are performed from $400a_{B}$ to $50a_{B}$. During the ramp, the trap frequency is adjusted such that the shape of the condensate remains static. The density distribution of the atoms is detected with absorption imaging using a two-frequency scheme described in \cite{Lb.45}, which allows an approximately closed scattering cycle at the magnetic fields around the Feshbach resonance. Imaging resolution is $1$ $\mu m$.\\
+
+Curvature in a metric\\
+
+The acoustic metric in a Bose-Einstein condensate \cite{Lb.14, Lb.32, Lb.46, Lb.47} is given by
+
+\begin{equation}
+    \label{Eq.5}
+    ds^{2} \thinspace = \thinspace -dt^{2} + \frac{1}{c^{2}_{s}} \thinspace (dr^{2} + r^{2} d \varphi^{2}) \thinspace , 
+\end{equation}
+
+with $c_{s}$  the time and space dependent speed of sound. On a two-dimensional condensate with azimuthal symmetry, a hyperbolic geometry with constant curvature is achieved for the radial density profile $n_{0} \thinspace (r) = \Bar{n_{0}} \left[1 - r^{2} / R^{2} \right] ^{2}$ with $\Bar{n_{0}}$ the density at the centre and $R$ the maximal radius (radius of the Poincaré disc). This yields the speed of sound
+
+\begin{equation}
+    \label{Eq.6}
+    c^{2}_{s} = \frac{\lambda (t) \thinspace n_{0} (r)}{m} \thinspace ,
+\end{equation}
+
+with $\lambda (t) = \sqrt{8 \pi w_{z} \hslash^{3} \thinspace / \thinspace m \thinspace a_{s} (t)}$  the two-dimensional coupling strength depending on the s-wave scattering length $a_{s}(t)$.  This brings the metric into the form
+
+\begin{equation}
+    \label{Eq.7}
+    ds^{2} \thinspace = \thinspace -dt^{2} + a^{2} (t) \thinspace \left( 1 - \frac{r^{2}}{R^{2}} \right)^{-2}  \left( dr^{2} + r^{2} d \varphi^{2} \right) \thinspace .
+\end{equation}
+
+The FLRW metric in Eq. (\ref{Ecuación1}) is recovered by a coordinate transformation between the radial lab coordinate $r$ and reduced circumference coordinates
+
+\begin{equation}
+    \label{Eq.8}
+    u(r) \thinspace = \thinspace \frac{r}{1 - \frac{r^{2}}{R^{2}}} \thinspace .
+\end{equation}
+
+A condensate in a harmonic trap has a parabolic density profile with Thomas-Fermi radius $R_{TF}$, which approximates the above density profile around the centre of the condensate for $R \thinspace = \thinspace \sqrt{2} R_{TF}$.\\
+
+The propagation of a wave packet proceeds along a geodesic. Since phonons propagate with the speed of sound, their trajectories satisfy $ds^{2} = 0$ and for the distance $L$ between two points can be measured with the metric in Eq. (1)
+
+\begin{equation}
+    \label{Eq.9}
+    \begin{split}
+    L(u, \varphi, u', \varphi') \thinspace = \thinspace \frac{1}{\sqrt{| k |}} \thinspace cosh^{-1} [ \sqrt{| k | u^{2} + 1} \sqrt{| k | u'^{2} + 1}\\
+    - | k | u u' cos (\varphi - \varphi') ] . 
+    \end{split}
+\end{equation}
+
+
+For the trajectory prediction in \ref{Figure1} d, we use Eq. (\ref{Eq.9}) with $\varphi = \varphi'$, divided by the speed of sound at the centre of the condensate, and Eq. (\ref{Eq.8}).\\
+
+The free parameters, speed of sound and Thomas-Fermi radius, are determined to be $R_{TF} = 25$ $\mu m$ and $c_{s} = 1.5$ $\mu m / ms$. The former is extracted from the density profile and the latter is the slope fitted to the three open symbols in \ref{Figure1} d. This is consistent with the speed of sound estimated from GPE simulations of the ground state.\\
+
+The experimental density profiles in \ref{Figure1} d are obtained along the black line in the lower right panel of \ref{Figure1} c. To increase signal to noise, we take an angular average over $\pm 10^{\circ}$ around that line. We determine the position of the wave packet to both sides of the initial position by a parabolic fit around the minimum value of the profile.\\
+
+An analogous calculation can be done for a positive spatial curvature implemented by the density profile $n_{0} (r) = \Bar{n_{0}} \left[ 1 + r^{2} / R^{2} \right]^{2}$ \cite{Lb.32}.\\
+
+Extraction of the correlation function\\
+
+The correlation functions are extracted from the density contrast in Eq. (\ref{Eq.3}) within the central region of the condensate up to half the Thomas-Fermi radius. For the density contrast, we first compute the distribution of the background condensate as an average over all realisations post-selected to be within $10\%$ of the mean atom number. The background is normalised to the atom number of each realisation. To increase signal to noise, four pixels are averaged, corresponding to the optical resolution.\\
+
+The spectrum is derived from the correlation function by a one-dimensional Hankel transform
+
+\begin{equation}
+    \label{Eq.10}
+    S_{k} \thinspace = \thinspace \frac{\Bar{n_{0}} \thinspace m}{\hslash \thinspace a (t_{f})} \thinspace \frac{1}{k} \int \thinspace dL \thinspace L \thinspace J_{0} (kL) \thinspace \langle \delta_{c} \delta_{c} \rangle \thinspace (L) \thinspace , 
+\end{equation}
+
+which is a decomposition into Bessel functions of the first kind $J_{0} (kL)$. Here, the scale factor $a(t_{f})$ is calculated with the scattering length at the end of the ramp $a_{s} (t_{f})$ (2). The transformation in Eq. (\ref{Eq.10}) is appropriate here due to statistical homogeneity and isotropy.\\
+
+From theory, the power spectrum of fluctuations for
+non-zero initial temperatures is predicted to be of the form
+
+\begin{equation}
+    \label{Eq.11}
+    S_{k} (t) \thinspace = \thinspace \left[ \frac{1}{2} + | \beta_{k} |^{2} + | \alpha_{k} \beta_{k} | \thinspace cos (\theta_{k} + 2 \omega_{k} t \right] \thinspace (1 + 2 N^{in}_{k}) \thinspace .
+\end{equation}
+
+The term $1/2$ corresponds to vacuum fluctuations, the term $| \beta_{k} |^{2}$ describes the populations of a mode $k$ and the oscillating term contains the contributions from coherences. The Bogoliubov coefficients $\alpha_{k}$ and $\beta_{k}$ as well as the phase $\theta_{k} = Arg(\alpha_{k} \beta_{k})$, depend on the expansion history and are calculated by relating the quantum states before and after the expansion \cite{Lb.48}. The initial distribution is taken to be of thermal form
+
+\begin{equation}
+    \label{Eq.12}
+    N^{in}_{k} (T) \thinspace = \thinspace \frac{1}{e^{\hslash \omega_{k}}  /  (k_{B}T) \thinspace - \thinspace 1} \thinspace .
+\end{equation}
+
+The experimentally extracted quantities are related to the spectrum by $A_{k} \thinspace = \thinspace | \alpha_{k} \beta_{k} | (1 + 2N^{in}_{k}) $ and $\vartheta_{k} = \theta_{k} + 2 \omega_{k} \Delta t$, with $\Delta t$ the duration of the ramp.\\
+
+
+\printbibliography
+
+\begin{figure*}[ht]
+    \centering
+    \includegraphics{Imágenes Usadas/Quantum field simulator for dynamics in curved spacetime - Figure6..png}
+    \renewcommand{\figurename}{Extended Data Figure - 1}
+    \caption{Theorical prediction for density-contrast correlation functions in real space. The initial temperature is taken to be $40$ $nk$, the final speed of sound is $1.2$ $\mu m / ms$ and the ramp goes from a $a_{s} = 350$ $a_{B}$ to $a_{s} = 50$ $a_{B}$ with scale factor $a(t)$ $\propto$ $t^{\gamma}$ for a decelerated expansion with $\gamma = 0.5$ and a duration $\Delta t = 1.5$ $ms$ (left) and $\Delta t = 3$ $ms$ (right). The fields are convoluted with a Gaussian of $\sigma = 0.8$ $\mu m$ corresponding to the optical resolution of the experiment. Different colours correspond to different hold times. }
+    \label{Extended Data Figure 1}
+\end{figure*}
+
+
+
+\end{document}
